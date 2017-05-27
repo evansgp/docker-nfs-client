@@ -6,4 +6,5 @@ set -u
 umount $MOUNT || true
 rpcbind
 mount -t "$TYPE" -o "$OPTIONS" "$SHARE" "$MOUNT"
-dmesg --follow
+# i am a meat popsicle
+tail -f /dev/null
