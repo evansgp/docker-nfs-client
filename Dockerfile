@@ -9,7 +9,6 @@ WORKDIR /usr/local/bin
 COPY entrypoint.sh .
 
 RUN chmod +x entrypoint.sh && \
-    mkdir -p $MOUNT && \
     apk add --no-cache nfs-utils
 
 ENTRYPOINT ["entrypoint.sh"]
