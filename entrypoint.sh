@@ -3,8 +3,9 @@
 set -e
 set -u
 
-umount $MOUNT || true
 rpcbind
+# if this container has previously been running the old mount may still be there
+umount $MOUNT || true
 mount -t "$TYPE" -o "$OPTIONS" "$SHARE" "$MOUNT"
-# i am a meat popsicle
+# FIXME
 tail -f /dev/null
